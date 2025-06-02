@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>斯特鲁普效应测试</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 规则页面 -->
+    <div id="rules-page" class="page active">
+        <h1><i class="fa-solid fa-brain"></i> STROOP TEST</h1>
+        <div class="rules">
+            <p><i class="fa-solid fa-triangle-exclamation"></i> 请打开键盘大写锁定</p>
+            <p><i class="fa-solid fa-paintbrush"></i> 判断词汇的【字体颜色】</p>
+            <p><i class="fa-solid fa-keyboard"></i> 按键规则：</p>
+            <div class="color-key red"><span>H</span> 红色</div>
+            <div class="color-key purple"><span>Z</span> 紫色</div>
+            <div class="color-key blue"><span>L</span> 蓝色</div>
+            <div class="color-key pink"><span>F</span> 粉色</div>
+            <div class="color-key orange"><span>C</span> 橙色</div>
+        </div>
+        <button id="start-btn">开始测试</button>
+    </div>
+
+    <!-- 测试页面 -->
+    <div id="test-page" class="page">
+        <div id="word-display"></div>
+        <div id="key-feedback">请按键: H, Z, L, F, C</div> <!-- 新增按键反馈 -->
+        <div id="progress">进度: <span id="progress-count">0</span>/20</div>
+    </div>
+
+    <!-- 结果页面 -->
+    <div id="results-page" class="page">
+        <h2><i class="fa-solid fa-chart-bar"></i> 测试结果</h2>
+        <div id="summary"></div>
+        <div id="detailed-results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>词汇</th>
+                        <th>颜色</th>
+                        <th>反应时间</th>
+                        <th>正确</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+            <div class="pagination">
+                <button id="prev-page"><i class="fa-solid fa-arrow-left"></i> 上一页</button>
+                <span id="current-page">1</span>/<span id="total-pages">1</span>
+                <button id="next-page">下一页 <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+        <div class="result-buttons">
+            <button id="save-btn"><i class="fa-solid fa-download"></i> 保存结果</button>
+            <button id="restart-btn"><i class="fa-solid fa-rotate-right"></i> 重新测试</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
